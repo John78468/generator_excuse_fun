@@ -12,7 +12,7 @@ class ExcusesController < ApplicationController
   def create
     @excuse = Excuse.create(excuse_params)
     if @excuse.save
-      redirect_to excuses_path, notice: 'Excuse ajoutée !'
+      redirect_to  random_path, notice: 'Excuse ajoutée !'
     else
       render :new
     end

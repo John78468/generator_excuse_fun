@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :excuses, only: [:index, :new, :create]
   get 'random', to: 'excuses#random'
   root 'excuses#random'
+
 end

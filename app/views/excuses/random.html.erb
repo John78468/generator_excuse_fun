@@ -1,5 +1,22 @@
-<h1>Voici votre excuse du jour :</h1>
 
-<p><%= @excuse %></p>
+<div class="text-center flex flex-col items-center space-y-8">
+  <h1 class="text-3xl font-bold text-blue-700">Obtenez une excuse amusante !</h1>
 
-<%= link_to 'Obtenir une nouvelle excuse', random_path, class: "btn btn-primary" %>
+  <div id="excuse-box" class="bg-white shadow-lg p-6 rounded-lg max-w-md w-full text-center text-xl font-semibold transition-opacity duration-500">
+    <p><%= @excuse %></p>
+  </div>
+
+  <%= link_to 'Générer une nouvelle excuse', random_path, class: 'mt-4 px-6 py-3 bg-blue-500 text-white rounded-lg font-semibold hover:bg-blue-600 transition' %>
+
+  <%= link_to 'Ajouter une excuse', new_excuse_path, class: 'mt-4 text-blue-500 hover:underline' %>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const excuseBox = document.getElementById("excuse-box");
+    excuseBox.style.opacity = 0;
+    setTimeout(() => {
+      excuseBox.style.opacity = 1;
+    }, 100);
+  });
+</script>
