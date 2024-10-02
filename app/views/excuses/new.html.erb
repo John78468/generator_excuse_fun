@@ -1,0 +1,25 @@
+<h1>Ajouter une nouvelle excuse</h1>
+
+<%= form_with model: @excuse, local: true do |form| %>
+  <div>
+    <%= form.label :category, "Catégorie" %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div>
+    <%= form.label :part1, "Début" %>
+    <%= form.text_field :part1 %>
+  </div>
+
+  <div>
+    <%= form.label :part2, "Milieu" %>
+    <%= form.text_field :part2 %>
+  </div>
+
+  <div>
+    <%= form.label :part3, "Fin" %>
+    <%= form.text_field :part3 %>
+  </div>
+
+  <%= form.submit "Ajouter", class: "btn btn-success" %>
+<% end %>
